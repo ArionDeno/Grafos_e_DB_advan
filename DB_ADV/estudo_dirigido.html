@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Estudo Dirigido Banco de dados Avancado 1B</title>
+  <meta charset="utf-8"/>
+  <style>
+    body
+	{
+      background-color:#101010;
+	  margin: 0px;
+	  padding: 0px;
+	}
+	
+	.cabecario
+	{
+	  color:white;
+	  text-align:center;
+	  font-family:arial;
+	  padding: 5px;
+	  border: 1px solid #4455AC;
+	  margin:auto;
+	  display: block;
+	  width:  max-content;
+	  height: auto;
+	}
+	.conteudo
+	{
+	  color:white;
+	  margin-left: 100px;
+	  text-align:left;
+	  font-family:arial;
+	  display: block;
+	 width:  max-content;
+	  height: auto;
+	}
+	h1.conteudo
+	{
+	  font-size:22px;
+	}
+	
+	p.conteudo
+	{
+	  font-size:14px;
+	  border: 1px solid #976A9E;
+      color:  #cce6ff;
+	}
+	
+	
+  </style>
+</head>
+  <body>
+  <section> 
+    <header>
+	  <h1 class="cabecario">Estudo Dirigido Banco de dados Avancado 1B</h1>
+	  <h2 class="cabecario">Universidade Tuiuti do Paraná</h2>
+	  <br>
+	  <p class="cabecario">
+	    Professor: Ricardo Solangelo Abano<br>
+	    Aluno: Arion Denovaro  <br>
+		Curso: Ciencia da Computação<br>
+		Data: 14/04/2021
+	  </p>
+	</header>
+	</section>
+	
+     <section>
+	   <article>
+	   <h1 class="conteudo"> Questão 01</h1>
+	     <p class="conteudo">
+		    /*1.Selecione  o  nome,  a  cidade  de  residência e  a  data  de  nascimento  de  todos  os <br>
+            clientes por ordem de data de nascimento do mais jovem ao mais velho. <br'>
+            Mostrando a data de nascimento no formato DD/MM/AAAA <br>*/ 
+		    <br>
+
+            SELECT cliente.cli_nome , cliente.cli_nascimento, cidade.cid_Nome <br>
+            <br>
+            FROM cliente  <br>
+            <br>
+            INNER JOIN cidade <br>
+            ON cliente.cid_id = cidade.cid_ID  <br>
+            <br>
+            ORDER BY  cliente.cli_nascimento ASC;
+            <br>
+		 </p>
+	     <hr>
+
+	   <h1 class="conteudo"> Questão 02</h1>
+	     <p class="conteudo"> <br>/* 2.Mostre o total de modelos de veículos por montadora. <br>
+            Exiba o nome da montadora  <br>
+            e o total de modelos de veículos de cada montadora.*/ <br>
+            <br>
+             SELECT  montadora.mon_nome   , COUNT(*) <br>
+             FROM modelo INNER JOIN montadora ON modelo.mon_id = montadora.mon_id <br> 
+             GROUP BY  montadora.mon_nome; <br>
+		 </p>
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 03</h1>
+	     <p class="conteudo"><br>
+		     /*Mostre o  total  de  clientes  por  ano  de  nascimento. <br>  
+             Ordenar  o  resultado  por  ordem  crescente do ano de nascimento.*/ <br>
+            <br>
+            SELECT cliente.cli_nascimento FROM cliente ORDER BY cliente.cli_nascimento ASC; 
+		 </p>
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 04</h1>
+	     <p class="conteudo"> <br>
+           /*4.Mostre o nome do cliente mais velho.*/ <br>
+           <br> 
+           SELECT cliente.cli_nome, cliente.cli_nascimento FROM cliente <br>
+ 		   WHERE cli_nascimento = (SELECT MAX(cli_nascimento) <br>
+		   FROM cliente);
+		 </p>
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 05</h1>
+	     <p class="conteudo"><br>
+		   /*5.Mostre o nome dos funcionários que contenham“Silva” <br>
+           em qualquer parte do nome*/ <br>
+		   <br>
+           SELECT funcionario.fun_nome FROM funcionario WHERE fun_nome LIKE '%Silva%';
+		 </p>
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 06</h1>
+	     <p class="conteudo">
+		    /* Adicione a coluna tempo de serviço(fun_tempoServico), do tipo inteiro, <br>
+            na tabela funcionario , deixando como valor default o zero (0).*/ <br>
+		   <br>
+            ALTER TABLE funcionario  <br>
+            ADD fun_tempoServico INT NOT NULL DEFAULT(0); <br>
+		 </p>
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 07</h1>
+	     <p class="conteudo">
+		   /*Verifique  que  na  coluna  professor_tempoServico,  da  tabela  professor,<br>
+		   os  valores ficaram como ‘null’, então altere o conteúdo deste campo para zero (0*/<br>
+		 ALTER TABLE funcionario <br>
+          ADD fun_tempoServico INT  DEFAULT(0); <br>
+		 </p>
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 08</h1>
+	     <p class="conteudo">
+		   /*Vamos  atualizar  o  atributo  tempo  de  servico  de  cada funcionario. <br> 
+           Para  isso usaremos  a seguinte fórmula: <br>
+           Ano atual menos o ano de nascimento do funcionário menos 25. <br>
+           <br>
+           Exemplo: FuncionárioPaulo  Soares: <br>
+           Ano  atual  2021–1985(ano  de  nascimento)–25.  O resultado seria 11. <br>
+		   Este será o tempo de serviço do funcionário Paulo Soares.*/ <br>
+           <br>
+           UPDATE funcionario  <br>
+		   SET fun_tempoServico = YEAR(GETDATE()) - YEAR(funcionario.fun_nascimento) - 25; <br>
+           <br>
+           SELECT *  FROM funcionario;
+		 </p>
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 09</h1>
+	     <p class="conteudo">
+		 
+		 testado e funcionando
+		 </p>
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 10</h1>
+	     <p class="conteudo">
+		   CREATE VIEW info_concecionaria AS <br>
+           SELECT concessionaria.con_nome_fantasia , <br> 
+           concessionaria.con_endereco , concessionaria.con_bairro, <br>
+           concessionaria.con_bairro   <br>
+           FROM concessionaria;<br>
+		 </p> 
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 11</h1>
+	     <p class="conteudo">
+		 SELECT *  FROM  info_concecionaria  INNER JOIN pk_concecissionaria PK_Regiao  ON   = pk_concecissionaria ;
+		 </p>
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 12</h1>
+	     <p class="conteudo"> <br>/*
+           Crie um cursor que contenha a data de nascimento e o nome do cliente. A partir desse cursor  <br>
+           criar uma tabela temporária onde conste: a data de nascimento, o nome do cliente e a faixa <br>
+           etária do cliente. As faixas etárias serão as seguintes:<br>
+           • “Acima dos 50”. Clientes com mais de 50 anos de idade.<br>
+           • “Entre 35 e 50”. Clientes com idade entre 35 anos até 50 anos.<br>
+           • “Abaixo dos 35”. Clientes com menos de 35 anos de idade.*/<br>
+            <br>
+            DECLARE faixa_clientes CURSOR FOR <br>
+            SELECT  cliente.cli_nascimento , cliente.cli_nome, <br>
+            YEAR(GETDATE()) -YEAR(cliente.cli_nascimento) AS idade <br>   
+            FROM cliente;  <br>
+             <br>
+            -- chama cursor <br>
+            OPEN faixa_clientes ; <br>
+             <br>   
+           -- variaveis
+           DECLARE @nasci DATE; <br>
+           DECLARE @nome_cliente VARCHAR(100); <br>
+           DECLARE @idade INT; <br>
+           DECLARE @faixa_idade VARCHAR(20);<br>
+		   <br>
+           --cria tabela temp <br> 
+           CREATE TABLE #dados_temp(nasci DATE , nome_cliente VARCHAR(100) , faixa_idade VARCHAR(20)); <br>
+           FETCH faixa_clientes INTO @nasci , @nome_cliente , @idade; <br>
+               <br>
+           WHILE(@@FETCH_STATUS = 0) <br>
+           BEGIN <br>
+            /*• “Acima dos 50”. Clientes com mais de 50 anos de idade. <br>
+             • “Entre 35 e 50”. Clientes com idade entre 35 anos até 50 anos. <br>
+             • “Abaixo dos 35”. Clientes com menos de 35 anos de idade.  */<br>
+			 <br>
+            IF @idade > 50 <br>
+               SET @faixa_idade  = 'Acima dos 50'; <br>
+            ELSE <br>
+              IF @idade < 35  <br> 
+	            SET @faixa_idade = 'Abaixo dos 35'; <br>
+             ELSE  <br> 
+               SET @faixa_idade = 'ENTRE  35 E 50'; <br>
+ 	              <br>
+              INSERT INTO #dados_temp VALUES(@nasci , @nome_cliente , @faixa_idade);  <br>
+              FETCH faixa_clientes INTO @nasci , @nome_cliente , @idade; <br>
+            END
+            <br>
+            SELECT * FROM #dados_temp; <br>
+             <br>
+            --fecha cursor
+            CLOSE faixa_clientes ; 
+            <br>   
+            -- LIBERA memoria  <br>
+            DEALLOCATE faixa_clientes;<br>
+			<br>
+           DROP TABLE #dados_temp;
+		 </p>
+	     <hr>
+	   
+	   <h1 class="conteudo"> Questão 13</h1>
+	   <br>
+		
+		  <h2 class="conteudo"> a e b </h2>  <br>
+		 		 
+		 <p class="conteudo">
+
+		   banco de dados afetou as linhas, no trexo a)  anteriores, e por isso  no trexo b) deu erro.
+		 </p>
+		 
+		 <br>
+		 
+		 
+         <h2 class="conteudo"> c) </h2>  <br>
+		 		 
+		 <p class="conteudo">
+
+		   a):  (1 linha afetada)  <br>
+              Horário de conclusão: 2021-05-04T21:52:13.5961982-03:00  <br>
+			  
+			b):   Mensagem 207, Nível 16, Estado 1, Linha 3 <br>
+                  Nome de coluna 'id_ID' inválido. <br>
+		 </p>
+	     <hr>
+	   
+	   </article>
+	 </section>
+
+  </body>
+</html>

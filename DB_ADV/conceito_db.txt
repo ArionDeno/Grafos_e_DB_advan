@@ -1,0 +1,42 @@
+--------ETAPAS-PARA-ESPECIFICACAO-DO-BANCO---------------------	
+
+Etapa 01 -->Modelo Conceitual:
+	--Coletar  os dados e requesitos de como o problema funciona, de modo simples
+	nome,rg,cpf,etc.... "Oque o cliente precisa armazenar e saber sobre os produtos na loja"
+		
+Etapa 02: -->Modelo Lógico:
+		--Estruturar os dados coletados em diagramas como o MER/DER, entidade e relacionamento, respeitando
+		A necessidade do Cliente.
+
+Etapa 03: -->Modelo Fisico:
+	--Tabelas, campos, atributos, restrincoes. A partir disso faz a SQL para o banco de dados
+
+-------------------------------------------------------------------------
+Comandos SQL 
+
+SELECT  --> Consulta Dados do banco.
+        SELECT campo campo  FROM tabela; consulta simples.
+		WHERE --> condicao de filtor, ex data < 10/5/2005
+        INNER JOIN --> mostra dados de tabela relacionadas
+		-----------------------------------------------------
+        SELECT campo, campo FROM tabela_chave_estrangeira INNER JOIN tabela_chave_primaria ON chave_primaria = chave_estrangeira;	
+        ORDER BY --> organiza os dados trazidos, SELECT campo , campo FROM tabela WHERE condicao ORDER BY campo;
+ 		
+INSERT --> Insere dados na tabela
+UPDATE --> Atualiza dados ex: UPDATE tabela SET campo = valor_novo  WHERE chave_primaria = valor;
+           
+DELETE --> apaga dados  , DELETE FROM tabela WHERE campo = valor
+CREATE --> Cria novo , tabela, registro, usario, trigger, procedure etc
+ALTER  --> Modifica a estrutura da tabela.
+DROP   --> Remove dados, campos, tabelas etc, se for apagar campos da tabela, use com o ALTER,
+GRANT  --> Permite acesso a um usuario
+REVOKE --> Nega permisao de acesso a algum usuario
+BEGIN/END --> começa uma transaçao no banco de dados
+COMMIT    --> Confirma uma transacao no banco de dados
+ROLLBACK  --> Defaz a transacao
+
+CREATE DATABASE banco_dados;  --> cria banco
+Use banco_dados;  --> entra no banco de dados
+
+INSERT INTO --> insere dados INSERT INTO nome_tabela(campos,campos) VALUE(valor,valor);
+TRUNCATE TABLE  --> reomove todos os dados da tabela, mas nao a tabela/ limpa a tabela. TRUNCATE TABLE tabela;

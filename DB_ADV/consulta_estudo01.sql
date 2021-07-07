@@ -1,0 +1,1 @@
+SELECT cli_celular , fun_nome FROM funcionario WHERE fun_genero = 'F' ORDER BY fun_nascimento  DESC;

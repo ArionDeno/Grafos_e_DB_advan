@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arion/arvore_binaria/arvore_binari/arvore_b.c
+arvore_b.h
+/home/arion/arvore_binaria/arvore_binari/arvore_b.h
+
+/home/arion/arvore_binaria/arvore_binari/arvore_b.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+
+/home/arion/arvore_binaria/arvore_binari/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+arvore_b.h
+/home/arion/arvore_binaria/arvore_binari/arvore_b.h
+

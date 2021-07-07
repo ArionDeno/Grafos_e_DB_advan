@@ -1,0 +1,3 @@
+/home/arion/listaDenc/build-listaDen-Desktop-Default/CMakeFiles/rebuild_cache.dir
+/home/arion/listaDenc/build-listaDen-Desktop-Default/CMakeFiles/listaDen.dir
+/home/arion/listaDenc/build-listaDen-Desktop-Default/CMakeFiles/edit_cache.dir

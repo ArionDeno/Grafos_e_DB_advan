@@ -1,0 +1,1 @@
+/usr/bin/gcc-8 -g  -rdynamic CMakeFiles/trabalho2bi.dir/main.c.o  -o trabalho2bi 

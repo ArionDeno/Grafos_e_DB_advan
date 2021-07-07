@@ -1,0 +1,1 @@
+/usr/bin/gcc -g  -rdynamic CMakeFiles/arvore_bina.dir/main.c.o CMakeFiles/arvore_bina.dir/arvore_bi.c.o  -o arvore_bina 

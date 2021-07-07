@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arion/arvore_bina/arvore_bina/arvore_bi.c
+arvore_bi.h
+/home/arion/arvore_bina/arvore_bina/arvore_bi.h
+
+/home/arion/arvore_bina/arvore_bina/arvore_bi.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+

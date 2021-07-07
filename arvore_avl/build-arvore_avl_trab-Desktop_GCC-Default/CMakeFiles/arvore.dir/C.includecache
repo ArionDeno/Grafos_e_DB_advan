@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arion/arvore_avl/arvore_avl_trab/arvore_avl.c
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+arvore_avl.h
+/home/arion/arvore_avl/arvore_avl_trab/arvore_avl.h
+
+/home/arion/arvore_avl/arvore_avl_trab/arvore_avl.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+
+/home/arion/arvore_avl/arvore_avl_trab/main.c
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+arvore_avl.h
+/home/arion/arvore_avl/arvore_avl_trab/arvore_avl.h
+

@@ -1,0 +1,1 @@
+/usr/bin/gcc -g  -rdynamic CMakeFiles/listaDen.dir/main.c.o CMakeFiles/listaDen.dir/listad.c.o CMakeFiles/listaDen.dir/listadd.c.o  -o listaDen 

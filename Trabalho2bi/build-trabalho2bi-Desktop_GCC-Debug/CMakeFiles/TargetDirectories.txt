@@ -1,0 +1,3 @@
+/home/arion/Arvores/Trabalho2bi/build-trabalho2bi-Desktop_GCC-Debug/CMakeFiles/rebuild_cache.dir
+/home/arion/Arvores/Trabalho2bi/build-trabalho2bi-Desktop_GCC-Debug/CMakeFiles/trabalho2bi.dir
+/home/arion/Arvores/Trabalho2bi/build-trabalho2bi-Desktop_GCC-Debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,3 @@
+/home/arion/arvore_avl/build-arvore_avl_trab-Desktop_GCC-Default/CMakeFiles/rebuild_cache.dir
+/home/arion/arvore_avl/build-arvore_avl_trab-Desktop_GCC-Default/CMakeFiles/arvore.dir
+/home/arion/arvore_avl/build-arvore_avl_trab-Desktop_GCC-Default/CMakeFiles/edit_cache.dir

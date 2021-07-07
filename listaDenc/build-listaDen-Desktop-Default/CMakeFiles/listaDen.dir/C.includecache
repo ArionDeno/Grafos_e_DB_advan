@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arion/listaDenc/listaDen/listad.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+
+/home/arion/listaDenc/listaDen/listadd.c
+listadd.h
+/home/arion/listaDenc/listaDen/listadd.h
+
+/home/arion/listaDenc/listaDen/listadd.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+
+/home/arion/listaDenc/listaDen/main.c
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+listad.h
+/home/arion/listaDenc/listaDen/listad.h
+listadd.h
+/home/arion/listaDenc/listaDen/listadd.h
+

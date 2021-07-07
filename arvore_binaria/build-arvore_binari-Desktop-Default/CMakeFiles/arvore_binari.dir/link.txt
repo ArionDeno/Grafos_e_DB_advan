@@ -1,0 +1,1 @@
+/usr/bin/gcc-8 -g  -rdynamic CMakeFiles/arvore_binari.dir/main.c.o CMakeFiles/arvore_binari.dir/arvore_b.c.o  -o arvore_binari 

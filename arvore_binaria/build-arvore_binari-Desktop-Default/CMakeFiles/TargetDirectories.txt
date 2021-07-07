@@ -1,0 +1,3 @@
+/home/arion/arvore_binaria/build-arvore_binari-Desktop-Default/CMakeFiles/rebuild_cache.dir
+/home/arion/arvore_binaria/build-arvore_binari-Desktop-Default/CMakeFiles/arvore_binari.dir
+/home/arion/arvore_binaria/build-arvore_binari-Desktop-Default/CMakeFiles/edit_cache.dir

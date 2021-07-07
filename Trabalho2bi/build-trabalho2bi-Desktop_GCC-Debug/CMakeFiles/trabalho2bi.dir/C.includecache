@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arion/Arvores/Trabalho2bi/trabalho2bi/main.c
+limits.h
+-
+stdio.h
+-
+stdlib.h
+-
+
